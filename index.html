@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="nav-container">
+      <nav>
+        <div class="container">
+          <div class="row">
+            <div class="logo">
+              <a
+                href="https://app.goaxell.com/v2/preview/Xxg0wdYpOoFS68c4a2r9?notrack=true"
+                ><img
+                  style="width: 200px"
+                  src="https://assets.cdn.filesafe.space/nJNK8F9txlp5KtGM33qr/media/661e48dbef70580f35b5e166.png"
+              /></a>
+            </div>
+            <div class="mobile_btn">
+              <a href="https://app.goaxell.com" class="login-button">Login</a>
+              <i class="fas fa-bars"></i>
+            </div>
+            <div class="main_menu">
+              <ul>
+                <li class="has_dropdown"><a href="Google.com">Service</a></li>
+                <li class="mega_menu_dropdown has_dropdown">
+                  <a href="#">Our Services <i class="fas fa-angle-down"></i></a>
+                  <div class="mega_menu sub_menu">
+                    <div class="mega_menu_item">
+                      <h3>MARKETING CENTER</h3>
+                      <p class="mega_item_description">
+                        Manage your marketing and create campaigns with less
+                        effort.
+                      </p>
+                      <a href="#"
+                        >Advertising Campaigns
+                        <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                      <a href="#"
+                        >Enhanced Local Listings
+                        <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                      <a href="#"
+                        >Landing Pages <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                      <a href="#"
+                        >Al Recommendations
+                        <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                    </div>
+                    <div class="mega_menu_item">
+                      <h3>MARKETPLACE</h3>
+                      <p class="mega_item_description">
+                        Need a little something extra? Find it here.
+                      </p>
+                      <a href="#"
+                        >ThryvPay <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                      <a href="#"
+                        >Signatures <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                      <a href="#"
+                        >Integrations <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="mega_menu_dropdown mega_menu_demo_2 has_dropdown">
+                  <a href="#">Shop 2 <i class="fas fa-angle-down"></i></a>
+                  <div class="mega_menu sub_menu">
+                    <div class="mega_menu_item">
+                      <h3>HOME SERVICES</h3>
+                      <a href="#"
+                        >Roofers <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                      <a href="#"
+                        >HVAC <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                      <a href="#"
+                        >Plumbers <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                      <a href="#"
+                        >Landscapers <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                      <a href="#"
+                        >Home Improvement <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                    </div>
+                    <div class="mega_menu_item">
+                      <h3>HEALTH & WELLNESS</h3>
+                      <a href="#"
+                        >Medical Practice <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                      <a href="#"
+                        >Dental Practice <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                      <a href="#"
+                        >Chiropractic <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                      <a href="#"
+                        >Fitness Studio <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                      <a href="#"
+                        >Physical Therapy <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                    </div>
+                  </div>
+                </li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+            <div class="login-register">
+              <a href="https://app.goaxell.com" class="login-button"
+                ><i class="fa-regular fa-user"></i> Login</a
+              >
+              <a href="https://goaxell.com/pricing" class="get-started-button"
+                >Get Started <i class="fa-regular fa-circle-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(function ($) {
+        $(".mobile_btn").on("click", function () {
+          $(".main_menu").slideToggle();
+          $(".mobile_btn i").toggleClass("fa-xmark fa-xl");
+        });
+
+        $(".main_menu ul li").each(function () {
+          if ($(this).find("ul").length > 0) {
+            $(this).addClass("has_dropdown");
+            $(this).on("click", function (e) {
+              e.stopPropagation();
+              $(this).find("ul").slideToggle();
+            });
+          }
+        });
+
+        $(document).on("click", function () {
+          $(".main_menu ul li ul").slideUp();
+        });
+
+        if ($(window).width() < 768) {
+          $(".main_menu ul li a").on("click", function () {
+            $(this)
+              .parent(".has_dropdown")
+              .children(".sub_menu")
+              .css({ "padding-left": "15px" })
+              .stop()
+              .slideToggle();
+
+            $(this)
+              .parent(".has_dropdown")
+              .children("a")
+              .find(".fa-angle-right")
+              .stop()
+              .toggleClass("fa-rotate-90");
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
