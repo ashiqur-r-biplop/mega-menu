@@ -48,13 +48,15 @@ body {
 }
 
 .nav-container {
-  max-width: 1060px;
+  max-width: 1560px;
   margin: 0 auto;
 }
 
 .container {
-  width: 1140px;
+  width: 1540px;
   margin: 0 auto;
+  padding: 20px 0px;
+  border-bottom: 1px solid rgba(185, 185, 185, 0.589);
 }
 
 .row {
@@ -124,7 +126,7 @@ body {
 
 /* mega menu css */
 .mega_menu_dropdown {
-  position: static !important;
+  position: relative !important;
 }
 
 .mega_menu {
@@ -133,24 +135,25 @@ body {
   background: #fff;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
   margin: 0 auto;
   transition: 0.5s;
-  padding: 0 20px;
   border-radius: 20px;
-  width: 50%;
+  width: 800px;
   box-shadow: 0px 5px 15px 0px rgba(212, 201, 201, 0.75);
+  position: absolute;
+  top: 80px;
+  left: 10px;
 }
-.Resource{
-  width: 25% !important;
-}
+
 .mega_menu_item {
-  width: 50%;
+  width: 100%;
   padding: 30px 20px;
 }
-.Resource .mega_menu_item{
+/* .Resource .mega_menu_item {
   width: 100%;
-}
+} */
 .main_menu ul li .mega_menu_item a {
   padding: 10px 0;
 }
@@ -183,9 +186,8 @@ body {
 }
 /* demo_2 css */
 .mega_menu_demo_2 .mega_menu {
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1140px;
+  left: 10px;
+  width: 600px;
 }
 
 .mobile_btn {
@@ -326,7 +328,11 @@ body {
     width: 100%;
   }
 }
-
+.login-register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .login-register .login-button {
   font-size: 16px;
   font-family: "Poppins";
@@ -341,20 +347,29 @@ body {
   color: #000;
   margin-right: 5px;
 }
-
 .login-register .get-started-button {
   font-size: 16px;
   font-weight: 600;
-  font-family: "Poppins";
-  background: #0d2340;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to left, #c0c0c03d 50%, #fff017 50%);
+  background-size: 200% 100%;
+  background-position: right;
   border-radius: 10px;
-  color: #fff;
+  color: #383838;
   padding: 12px 30px;
   margin-left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-position 0.4s ease;
+}
+
+.login-register .get-started-button:hover {
+  background-position: left;
 }
 
 .login-register .fa-circle-right {
-  color: #ec732f;
+  color: #383838;
   font-size: 20px;
   margin-left: 10px;
 }
