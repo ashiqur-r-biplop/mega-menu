@@ -74,7 +74,10 @@ body {
 }
 
 /* normal menu css */
-
+.main_menu {
+  margin-right: auto;
+  padding-left: 50px;
+}
 .main_menu > ul > li {
   display: inline-block;
   position: relative;
@@ -211,7 +214,7 @@ body {
   justify-content: start;
   align-items: start;
   gap: 20px;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   padding: 15px 10px;
   cursor: pointer;
 }
@@ -224,7 +227,7 @@ body {
   color: #0602fd9f;
   padding: 15px 10px;
   border-radius: 10px;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .mega-option-content {
 }
