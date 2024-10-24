@@ -52,7 +52,7 @@ body {
   margin: 0 auto;
 }
 
-.container {
+.mega-container {
   width: 1540px;
   margin: 0 auto;
   padding: 20px 10px;
@@ -290,7 +290,7 @@ body {
 
 @media (max-width: 767.98px) {
   .mega_menu_demo_2 .mega_menu,
-  .container {
+  .mega-container {
     width: 100%;
   }
 
