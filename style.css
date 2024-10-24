@@ -133,10 +133,6 @@ body {
   left: 0;
   right: 0;
   background: #fff;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 20px;
   margin: 0 auto;
   transition: 0.5s;
   border-radius: 20px;
@@ -146,7 +142,18 @@ body {
   top: 80px;
   left: 10px;
 }
-
+.mega_menu-inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.mega_menu_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 20px;
+  padding: 20px;
+}
 .mega_menu_item {
   width: 100%;
   padding: 30px 20px;
@@ -198,7 +205,29 @@ body {
   font-size: 26px;
   margin-left: 10px;
 }
-
+.mega-option {
+  background-color: transparent;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+  transition: all .3s ease-in-out;
+  padding: 15px 10px;
+  cursor: pointer;
+}
+.mega-option .icon {
+  width: 50px;
+  height: 50px;
+}
+.mega-option:hover {
+  background-color: #a09eff70;
+  color: #0602fd9f;
+  padding: 15px 10px;
+  border-radius: 10px;
+  transition: all .3s ease-in-out;
+}
+.mega-option-content {
+}
 /* responsive css */
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .container {
