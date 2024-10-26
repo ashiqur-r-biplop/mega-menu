@@ -21,7 +21,7 @@
               /></a>
             </div>
             <div class="mobile_menu_icons">
-              <input type="checkbox">
+              <input type="checkbox" id="checkBox">
               <div class="mobile_menu_line firstLine"></div>
               <div class="mobile_menu_line mobile_menu_middle_line"></div>
               <div class="mobile_menu_line lastLine"></div>
@@ -143,16 +143,59 @@
                 ><span>Talk to our team</span> <i class="fa-regular fa-circle-right"></i
               ></a>
             </div>
+            
           </div>
+          <div class="mobile_hamburg_menu" id="mobile_hamburg_menu">
+            <div class="drop-down">
+              <div class="drop-down-head mobile-menu-item">
+                <h3>Solutions</h3>
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+              <div class="mobile-menu-item">
+                <h3><a href="#About">About</a></h3>
+              </div>
+              <div class="drop-down-head mobile-menu-item">
+                <h3>Resources</h3>
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+              <div class="mobile-menu-item">
+                <h3><a href="#Free-E-Book">Free E-Book</a></h3>
+              </div>
+              <div class="login-register-mobile-btn">
+                <a href="https://app.goaxell.com" class="login-button"
+                  ><i class="fa-regular fa-user"></i> Login</a
+                >
+                <a href="https://goaxell.com/pricing" class="get-started-button"
+                  ><span>Talk to our team</span> <i class="fa-regular fa-circle-right"></i
+                ></a>
+              </div>
+            
+            </div>
+          </div>
+         
         </div>
         <!-- mobile navbar -->
-         <div></div>
+
       </nav>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-      
+      const mobile_hamburg_menu = document.getElementById("mobile_hamburg_menu");
+      document.getElementById("checkBox").addEventListener("change", function(e){
+        
+          if(e.target.checked){
+            mobile_hamburg_menu.style.position = "absolute";
+            mobile_hamburg_menu.style.top ="0";
+            mobile_hamburg_menu.style.left ="0";
+            mobile_hamburg_menu.style.height ="100vh";
+            mobile_hamburg_menu.style.width ="100vw";
+            mobile_hamburg_menu.style.backgroundColor ="#d3d3d3";
+            mobile_hamburg_menu.style.overflow ="hidden";
+          } else{
+            mobile_hamburg_menu.style.top ="-100vh";
+          }
+      })
     </script>
   </body>
 </html>

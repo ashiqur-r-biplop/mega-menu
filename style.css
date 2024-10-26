@@ -33,10 +33,6 @@ a {
   margin-top: 10px;
 }
 
-.fa-solid {
-  color: var(--icon-color);
-}
-
 ul,
 ol {
   list-style-type: none;
@@ -54,14 +50,17 @@ body {
 }
 
 .mega-container {
-  width: 1540px;
+  max-width: 1540px;
   margin: 0 auto;
+  z-index: 99999 !important;
+  background-color: white;
   padding: 20px 10px;
   border-bottom: 1px solid rgba(185, 185, 185, 0.589);
 }
 
 .row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -304,59 +303,139 @@ body {
 .mobile_menu_icons {
   display: none;
 }
-@media screen and (min-width: 0px) and (max-width: 1000px) {
-  .main_menu {
+.mobile_hamburg_menu {
+  display: none;
+}
+/* Main Reset for Mobile */
+@media screen and (max-width: 1125px) {
+  /* Show mobile menu icon, hide desktop menu */
+  .main_menu,
+  .login-register {
     display: none !important;
   }
-  .login-register {
-    display: none;
-  }
+
+  /* Display mobile menu icons */
   .mobile_menu_icons {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 50px;
-    height: 50px;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* smaller width for better fit */
+    height: 40px;
     position: relative;
+    z-index: 10;
+    gap: 8px;
   }
 
+  /* Hidden input to control the icon */
   .mobile_menu_icons input {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
+    opacity: 1;
     cursor: pointer;
     z-index: 9999 !important;
   }
 
+  /* Hamburger lines */
   .mobile_menu_line {
-    width: 50px;
-    height: 6px;
+    width: 100%;
+    height: 4px;
     background-color: #2c2c2c;
     border-radius: 5px;
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
+
+  /* Font Awesome X icon (close state) */
   .fa-xmark {
+    display: none;
+    font-size: 32px;
+    color: #2c2c2c;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 72px;
-    color: #2c2c2c !important;
-    display: none;
-    z-index: 9 !important;
+    z-index: 1;
   }
-  /* Checked (close) state */
-  .mobile_menu_icons input:checked ~ .mobile_menu_line {
+
+  /* Toggle menu icon state on check */
+  .row .mobile_menu_icons input:checked ~ .mobile_menu_line {
     display: none;
   }
-  .mobile_menu_icons input:checked ~ .fa-xmark {
+  .row .mobile_menu_icons input:checked ~ .fa-xmark {
     display: flex;
+  }
+
+  /* Mobile fullscreen menu styling */
+  .row
+    .mobile_menu_icons
+    input:checked
+    ~ .row
+    .nav-container
+    .mobile_hamburg_menu {
+    height: 0;
+
+    transition: all 0.3s ease-in-out;
+  }
+  .mobile_hamburg_menu {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    z-index: 9;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+    overflow: hidden;
+    padding: 100px;
+    left: 25px;
+    position: absolute;
+    top: -100vh;
+  }
+
+  /* Add some padding or spacing to menu items on mobile */
+  .mobile_hamburg_menu ul li {
+    padding: 15px 0;
+  }
+  .drop-down {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 50px;
+  }
+  .mobile-menu-item {
+    font-size: 26px;
+  }
+  .drop-down-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: black !important;
+  }
+  .drop-down-he .fa-angle-down {
+    color: black !important;
+  }
+  .drop-down a {
+    color: black;
+  }
+  .login-register-mobile-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    gap: 10px;
+    margin: 10px;
+  }
+  .get-started-button{
+    background-color: #b3b3b3;
+    padding: 10px;
+    border-radius: 10px;
   }
 }
