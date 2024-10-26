@@ -44,6 +44,7 @@ ol {
 
 body {
   overflow-x: hidden;
+  position: relative;
   font-family: "Poppins", sans-serif;
 }
 
@@ -76,7 +77,6 @@ body {
 .main_menu {
   margin-right: auto;
   padding-left: 50px;
-  
 }
 .main_menu > ul > li {
   display: inline-block;
@@ -229,129 +229,32 @@ body {
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
 }
-
-/* responsive css */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-
-  .mega_menu_demo_2 .mega_menu {
-    width: 940px;
-  }
-
-  .main_menu ul li ul {
-    width: 150px;
-  }
+.main_menu ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  margin-top: 50px;
 }
 
-@media (min-width: 768px) and (max-width: 991.98px) {
-
-  .mega_menu_demo_2 .mega_menu {
-    width: 700px;
-  }
-
-  .main_menu ul li a {
-    font-size: 15px;
-    padding: 20px 16px;
-  }
-
-  .main_menu ul li ul {
-    width: 150px;
-  }
+.main_menu ul li .mega_menu {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  margin-top: 50px;
 }
 
-@media (min-width: 768px) {
-  .main_menu ul li ul {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    margin-top: 50px;
-  }
-
-  .main_menu ul li .mega_menu {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    margin-top: 50px;
-  }
-
-  .main_menu ul li:hover > ul {
-    visibility: visible;
-    opacity: 1;
-    margin-top: 0px;
-    z-index: 99;
-  }
-
-  .main_menu ul li:hover > .mega_menu {
-    visibility: visible;
-    opacity: 1;
-    margin-top: 0;
-    z-index: 99;
-  }
+.main_menu ul li:hover > ul {
+  visibility: visible;
+  opacity: 1;
+  margin-top: 0px;
+  z-index: 99;
 }
 
-@media (max-width: 767.98px) {
-  .mega_menu_demo_2 .mega_menu,
-  .mega-container {
-    width: 100%;
-  }
-
-  nav {
-    padding: 15px;
-  }
-
-  .mobile_btn {
-    cursor: pointer;
-    display: block;
-  }
-
-  .main_menu {
-    display: none;
-    width: 100%;
-  }
-
-  .main_menu ul li {
-    display: block;
-  }
-
-  .main_menu ul li a i {
-    float: right;
-  }
-
-  .main_menu ul li a {
-    border-bottom: 1px solid #ddd;
-  }
-
-  .main_menu ul li ul {
-    width: 100%;
-  }
-
-  .main_menu ul li ul li ul {
-    left: 0;
-    top: auto;
-  }
-
-  .mega_menu .mega_menu_item {
-    width: 50%;
-  }
-
-  .main_menu ul li ul {
-    display: none;
-    transition: none;
-  }
-
-  .main_menu ul li .mega_menu {
-    display: none;
-    transition: none;
-  }
-
-  .mega_menu_demo_2 .mega_menu {
-    transform: translateX(0);
-  }
-}
-
-@media (max-width: 575.98px) {
-  .mega_menu .mega_menu_item {
-    width: 100%;
-  }
+.main_menu ul li:hover > .mega_menu {
+  visibility: visible;
+  opacity: 1;
+  margin-top: 0;
+  z-index: 99;
 }
 .login-register {
   display: flex;
@@ -398,9 +301,62 @@ body {
   font-size: 20px;
   margin-left: 10px;
 }
-
-@media (max-width: 575.98px) {
+.mobile_menu_icons {
+  display: none;
+}
+@media screen and (min-width: 0px) and (max-width: 1000px) {
+  .main_menu {
+    display: none !important;
+  }
   .login-register {
     display: none;
+  }
+  .mobile_menu_icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50px;
+    height: 50px;
+    position: relative;
+  }
+
+  .mobile_menu_icons input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 9999 !important;
+  }
+
+  .mobile_menu_line {
+    width: 50px;
+    height: 6px;
+    background-color: #2c2c2c;
+    border-radius: 5px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .fa-xmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 72px;
+    color: #2c2c2c !important;
+    display: none;
+    z-index: 9 !important;
+  }
+  /* Checked (close) state */
+  .mobile_menu_icons input:checked ~ .mobile_menu_line {
+    display: none;
+  }
+  .mobile_menu_icons input:checked ~ .fa-xmark {
+    display: flex;
   }
 }

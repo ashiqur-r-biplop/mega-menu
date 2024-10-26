@@ -20,6 +20,14 @@
                   src="https://storage.googleapis.com/msgsndr/wKwZRzi5JiYNGFbN9WD3/media/6716aee8f65c1b7771f814bf.png"
               /></a>
             </div>
+            <div class="mobile_menu_icons">
+              <input type="checkbox">
+              <div class="mobile_menu_line firstLine"></div>
+              <div class="mobile_menu_line mobile_menu_middle_line"></div>
+              <div class="mobile_menu_line lastLine"></div>
+              <i class="fa-solid fa-xmark close-icon"></i>
+            </div>
+            
             <div class="mobile_btn">
               <a href="https://app.goaxell.com" class="login-button">Login</a>
               <i class="fas fa-bars"></i>
@@ -137,49 +145,14 @@
             </div>
           </div>
         </div>
+        <!-- mobile navbar -->
+         <div></div>
       </nav>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-      $(function ($) {
-        $(".mobile_btn").on("click", function () {
-          $(".main_menu").slideToggle();
-          $(".mobile_btn i").toggleClass("fa-xmark fa-xl");
-        });
-
-        $(".main_menu ul li").each(function () {
-          if ($(this).find("ul").length > 0) {
-            $(this).addClass("has_dropdown");
-            $(this).on("click", function (e) {
-              e.stopPropagation();
-              $(this).find("ul").slideToggle();
-            });
-          }
-        });
-
-        $(document).on("click", function () {
-          $(".main_menu ul li ul").slideUp();
-        });
-
-        if ($(window).width() < 768) {
-          $(".main_menu ul li a").on("click", function () {
-            $(this)
-              .parent(".has_dropdown")
-              .children(".sub_menu")
-              .css({ "padding-left": "15px" })
-              .stop()
-              .slideToggle();
-
-            $(this)
-              .parent(".has_dropdown")
-              .children("a")
-              .find(".fa-angle-right")
-              .stop()
-              .toggleClass("fa-rotate-90");
-          });
-        }
-      });
+      
     </script>
   </body>
 </html>
